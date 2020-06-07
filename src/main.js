@@ -1,8 +1,4 @@
 import { createApp } from 'vue';
-import App from './components/app/app.vue';
-import 'todomvc-app-css/index.css';
-import { createStore } from './store/index';
+import App from './App.vue';
 
-const app = createApp(App);
-app.use(createStore());
-app.mount('app-root');
+createApp(App).mount('#app');
