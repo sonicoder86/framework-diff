@@ -1,7 +1,10 @@
 <script>
   import { onMounted, ref } from 'vue';
+  import 'codemirror/lib/codemirror.css';
   import CodeMirror from 'codemirror';
-  // import 'codemirror/mode/javascript/javascript';
+  import 'codemirror/mode/javascript/javascript';
+  import 'codemirror/mode/jsx/jsx';
+  import 'codemirror/mode/vue/vue';
 
   const codeDisplay = `const LOCAL_STORAGE_KEY = 'todoapp_todos';
 
@@ -25,7 +28,6 @@ export class TodoLocal {
       onMounted(() => {
         myCodeMirror = CodeMirror(leftCode.value, {
           value: codeDisplay,
-          lineNumbers: true,
           mode: 'javascript'
         });
         console.log(leftCode.value)
@@ -121,7 +123,3 @@ export class TodoLocal {
     </footer>
   </div>
 </template>
-
-<style>
-  @import "codemirror/lib/codemirror.css";
-</style>
